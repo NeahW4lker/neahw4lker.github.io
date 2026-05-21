@@ -1201,3 +1201,57 @@ nav ul li a:hover {
     gap: 8px !important;
     margin-top: 5px;
 }
+/* --- Style par défaut (Ordinateur) --- */
+.menu-toggle {
+    display: none; /* Caché sur ordinateur */
+    background: none;
+    border: none;
+    color: var(--text-color, #ffffff); /* Utilise ta variable de couleur ou du blanc */
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* --- Style Mobile (< 768px) --- */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* On affiche le bouton burger */
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%; /* Se déploie juste en dessous du header */
+        left: 0;
+        width: 100%;
+        background-color: rgba(10, 17, 28, 0.95); /* Adapte avec ton fond sombre/cyber */
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 20px;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+        border-bottom: 2px solid #ff4a57; /* Optionnel : une bordure de ta couleur d'accent */
+        
+        /* Effet de transition pour le déroulement */
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+        pointer-events: none; /* Évite de cliquer dessus quand il est invisible */
+    }
+
+    /* Classe dynamique qui sera ajoutée en JavaScript lors du clic */
+    .nav-links.active {
+        max-height: 300px; /* Hauteur maximale estimée du menu déployé */
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* Ajustement de la structure globale sur mobile */
+    .nav-container {
+        position: relative; /* Permet au menu absolu de se caler correctement */
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
