@@ -212,4 +212,36 @@ document.addEventListener('DOMContentLoaded', () => {
     switchLanguage(savedLang);
 });
 
-// --- Reste de ton code (Animation du curseur personnalisé, particules, etc.) ---
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    if (menuToggle && navLinks) {
+        // 1. Ouvre ou ferme le menu lors du clic sur le burger
+        menuToggle.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+            
+            // Optionnel : change l'icône burger (bars) en croix (xmark) quand c'est ouvert
+            const icon = menuToggle.querySelector("i");
+            if (navLinks.classList.contains("active")) {
+                icon.classList.remove("fa-bars");
+                icon.classList.add("fa-xmark");
+            } else {
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
+            }
+        });
+
+        // 2. Ferme automatiquement le menu quand on clique sur un lien (pour la navigation interne)
+        navLinks.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("active");
+                const icon = menuToggle.querySelector("i");
+                if (icon) {
+                    icon.classList.remove("fa-xmark");
+                    icon.classList.add("fa-bars");
+                }
+            });
+        });
+    }
+});
