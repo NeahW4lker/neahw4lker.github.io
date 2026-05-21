@@ -2,7 +2,7 @@
 
 Je suis un **Ingénieur Cybersécurité** passionné, avec de solides fondations en **Développement Web**. J'aime lier le code et la sécurité pour concevoir des environnements résilients et relever des défis techniques stimulants.
 
-- 🛡️ Actuellement **Deputy CISO & IT Infra Project Officer**
+- 🛡️ Dernièrement **Deputy CISO & IT Infra Project Officer**
 - 🎓 Diplômé du **Conservatoire National des Arts et Métiers**
 - 💼 Compétences clés : Gouvernance & Risques (ISO 27001, GDPR), VAPT, Réseau, Dev JavaScript/Linux.
 - 🌍 Langues : Français, Anglais, Malagasy, Allemand (B1)
@@ -36,3 +36,4 @@ Je suis un **Ingénieur Cybersécurité** passionné, avec de solides fondations
 
 📫 **Pour me contacter :**
 - 📧 Email : hart.tsiry@gmail.com
+- 🤳Phone : +261 34 75 058 87
