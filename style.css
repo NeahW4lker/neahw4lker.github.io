@@ -1298,8 +1298,50 @@ nav ul li a:hover {
         text-decoration: none;
     }
 
-    /* 5. On compense la hauteur de la navbar fixe pour le Hero de ton site */
     .hero {
         padding-top: 100px !important; /* Évite que la navbar fixe ne cache le haut de ton nom */
+@media screen and (max-width: 768px) {
+    
+    /* ... tes styles précédents pour .nav-links et .cyber-header ... */
+
+    /* Force le conteneur mobile à être visible */
+    .mobile-languages-wrapper {
+        display: block !important;
+        width: 100%;
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1); /* Petite ligne de séparation discrète */
+    }
+
+    /* Aligne les boutons FR, EN, DE horizontalement au centre du menu */
+    .mobile-lang-buttons {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 12px !important;
+    }
+
+    /* Style optionnel pour s'assurer que les boutons restent cliquables et stylisés */
+    .mobile-lang-buttons .lang-btn {
+        display: inline-block !important;
+        padding: 6px 12px !important;
+        font-size: 0.9rem !important;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        background: transparent;
+        color: #ffffff;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    .mobile-lang-buttons .lang-btn.active {
+        background-color: #ff4a57; /* Ta couleur d'accent orange/rouge */
+        border-color: #ff4a57;
+    }
+}
+
+/* --- Style pour l'ordinateur (Écran large) --- */
+@media screen and (min-width: 769px) {
+    /* Cache le bloc de langues mobile si l'écran est grand */
+    .mobile-languages-wrapper {
+        display: none !important;
     }
 }
