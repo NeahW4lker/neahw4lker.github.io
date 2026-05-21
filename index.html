@@ -13,21 +13,26 @@
     <canvas id="cyber-canvas"></canvas>
 
     <nav>
-        <div class="nav-container">
-            <a href="#" class="logo">TH</a>
-            <ul>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#experience">Expériences</a></li>
-                <li><a href="#projects">Projets</a></li>
-                <li><a href="#skills">Compétences</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+       <div class="nav-container">
+        <div class="logo">TH</div>
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#about" data-i18n="nav_about">À propos</a></li>
+            <li><a href="#experience" data-i18n="nav_exp">Expérience</a></li>
+            <li><a href="#projects" data-i18n="nav_projects">Projets</a></li>
+            <li><a href="#skills" data-i18n="nav_skills">Compétences</a></li>
+        </ul>
+
+        <div class="lang-switcher-container">
+            <button class="lang-btn active">FR</button>
+            <button class="lang-btn">EN</button>
+            <button class="lang-btn">DE</button>
         </div>
-        <div class="lang-switcher">
-    <button onclick="switchLanguage('fr')" class="lang-btn active">FR</button>
-    <button onclick="switchLanguage('en')" class="lang-btn">EN</button>
-    <button onclick="switchLanguage('de')" class="lang-btn">DE</button>
-</div>
+    </div>
     </nav>
 
 <header class="cyber-header">
