@@ -179,35 +179,52 @@ if (cursorDot && cursorOutline) {
         });
     });
 }
-// ==========================================================================
-// SYSTEME DE TRADUCTION SANS ERREUR CORS (DONNÉES INTÉGRÉES)
-// ==========================================================================
+function switchLanguage(lang) {
+    // On vérifie si le dictionnaire existe
+    if (typeof i18nTranslations === 'undefined') {
+        console.error("Erreur : Le fichier translations.js n'est pas chargé ou la variable i18nTranslations est introuvable.");
+        return;
+    }
 
+    const translations = i18nTranslations[lang];
+    if (!translations) {
+        console.warn(`Attention : Aucune traduction trouvée pour la langue : ${lang}`);
+        return;
+    }
+
+    console.log(`Changement de langue vers : ${lang}`);
+
+    // On parcourt tous les éléments de la page qui ont l'attribut data-i18n
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[key]) {
+            element.innerHTML = translations[key];
+        } else {
+            console.log(`Clé manquante dans le dictionnaire pour [${lang}] : ${key}`);
+        }
+    });
+}
+
+// 2. Initialisation des écouteurs de clics au chargement de la page
 document.addEventListener("DOMContentLoaded", () => {
-    
-    // ==========================================
-    // 🌐 GESTION DE LA TRADUCTION ET DES BOUTONS
-    // ==========================================
-    
-    // On cible TOUS les boutons qui ont la classe .lang-btn (desktop + mobile)
     const langButtons = document.querySelectorAll('.lang-btn');
+    
+    console.log(`${langButtons.length} boutons de langue trouvés sur la page.`);
 
     langButtons.forEach(button => {
         button.addEventListener('click', (e) => {
-            e.preventDefault(); // Évite tout comportement anormal au clic
-
-            // 1. Récupère la langue cible en minuscules (ex: "fr", "en", "de")
-            const targetLang = e.target.textContent.trim().toLowerCase();
+            e.preventDefault();
             
-            // 2. Appelle ta fonction de traduction globale
-            if (typeof switchLanguage === "function") {
-                switchLanguage(targetLang);
-            }
+            // Récupère le texte du bouton (FR, EN ou DE) mis en minuscules
+            const selectedLang = e.target.textContent.trim().toLowerCase();
+            console.log(`Clic détecté sur le bouton : ${selectedLang}`);
 
-            // 3. Synchronise l'état visuel "active" sur TOUS les blocs de boutons
+            // Exécute la traduction
+            switchLanguage(selectedLang);
+            
+            // Synchronise la classe 'active' sur tous les boutons correspondants
             langButtons.forEach(btn => {
-                const btnLang = btn.textContent.trim().toLowerCase();
-                if (btnLang === targetLang) {
+                if (btn.textContent.trim().toLowerCase() === selectedLang) {
                     btn.classList.add('active');
                 } else {
                     btn.classList.remove('active');
@@ -216,7 +233,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-
 document.addEventListener("DOMContentLoaded", () => {
     const menuToggle = document.getElementById("menu-toggle");
     const navLinks = document.getElementById("nav-links");
