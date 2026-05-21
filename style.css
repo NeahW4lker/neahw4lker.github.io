@@ -1171,47 +1171,102 @@ nav ul li a:hover {
 }
 /* À insérer à la fin de ton bloc @media screen and (max-width: 768px) */
 
-.cyber-header { /* Ajuste avec le nom de classe exact de ta navbar si besoin */
-    padding: 10px 15px !important;
-}
-
-/* 1. On empile le menu ou on lui donne une structure propre */
-.nav-container, .navbar { 
+/* ==========================================================================
+   🖥️ NAVBAR DESIGN (Écrans larges / Ordinateur)
+   ========================================================================== */
+.cyber-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 60px; /* Sécurité : s'agrandit légèrement si besoin au lieu de couper */
+    height: auto; 
+    background-color: rgba(10, 17, 28, 0.95); /* Ton fond sombre */
+    backdrop-filter: blur(10px);
+    z-index: 1000;
     display: flex;
-    flex-direction: column !important; /* Met le logo, les liens et les langues les uns sous les autres */
-    gap: 12px !important;
     align-items: center;
-    text-align: center;
+    padding: 10px 40px; /* Un peu d'espace vertical */
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* 2. On gère la liste des liens pour qu'elle s'affiche horizontalement avec flex-wrap ou en bloc */
-.nav-links, .menu-links {
-    display: flex;
-    flex-wrap: wrap; /* Permet aux liens de passer à la ligne proprement si l'écran est minuscule */
-    justify-content: center;
-    gap: 15px !important;
-    padding: 0;
+/* Le conteneur principal qui doit tout aligner sur une seule ligne */
+.nav-container {
+    display: flex !important;
+    flex-direction: row !important; /* Force absolument la ligne */
+    flex-wrap: wrap; /* Permet d'éviter les collisions si l'écran rétrécit */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+
+/* 1. Le Logo "TH" */
+.logo {
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: #ff4a57; /* Ta couleur d'accent */
     margin: 0;
+    flex-shrink: 0; /* Empêche le logo de se déformer */
 }
 
-/* 3. Groupe contenant tes boutons de langue FR | EN | DE */
+/* 2. Les Liens de Navigation */
+.nav-links {
+    display: flex !important;
+    flex-direction: row !important; /* Force l'alignement horizontal des liens */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 25px; /* Espace entre À propos, Expérience... */
+    align-items: center;
+}
+
+.nav-links li {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    white-space: nowrap; /* Empêche un lien de se couper sur deux lignes */
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #ff4a57;
+}
+
+/* 3. Le bloc des boutons de langue (FR, EN, DE) */
 .lang-switcher-container, .lang-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 8px !important;
-    margin-top: 5px;
-}
-/* --- Style par défaut (Ordinateur) --- */
-.menu-toggle {
-    display: none; /* Caché sur ordinateur */
-    background: none;
-    border: none;
-    color: var(--text-color, #ffffff); /* Utilise ta variable de couleur ou du blanc */
-    font-size: 1.5rem;
-    cursor: pointer;
-    z-index: 1001;
+    display: flex !important;
+    flex-direction: row !important; /* Aligne les boutons en ligne */
+    gap: 8px;
+    align-items: center;
+    flex-shrink: 0;
 }
 
+.lang-btn {
+    padding: 5px 12px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.lang-btn.active {
+    background-color: #ff4a57;
+    border-color: #ff4a57;
+}
+.menu-toggle{
+    display: none !important;
+}
 /* --- Style Mobile (< 768px) --- */
 @media screen and (max-width: 768px) {
     /* 1. On garde la navbar fine et fixe en haut */
@@ -1302,7 +1357,6 @@ nav ul li a:hover {
         padding-top: 100px !important; /* Évite que la navbar fixe ne cache le haut de ton nom */
 @media screen and (max-width: 768px) {
     
-    /* ... tes styles précédents pour .nav-links et .cyber-header ... */
 
     /* Force le conteneur mobile à être visible */
     .mobile-languages-wrapper {
@@ -1336,12 +1390,79 @@ nav ul li a:hover {
         background-color: #ff4a57; /* Ta couleur d'accent orange/rouge */
         border-color: #ff4a57;
     }
+    .menu-toggle {
+        display: block !important;
+        visibility: visible !important;
+        position: relative !important;
+        z-index: 9999 !important; /* Force le bouton au premier plan */
+        color: #ff4a57 !important; /* Force une couleur rouge vif pour le test */
+        background: yellow !important; /* Force un fond jaune pour voir où il se trouve */
+        padding: 10px !important;
+    }
 }
+
 
 /* --- Style pour l'ordinateur (Écran large) --- */
 @media screen and (min-width: 769px) {
     /* Cache le bloc de langues mobile si l'écran est grand */
     .mobile-languages-wrapper {
         display: none !important;
+    }
+}
+    }
+}
+/* --- Style du bouton E-mail dans le Footer --- */
+.channels-list {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Aligne en ligne sur PC, passe en colonne si l'écran est très petit */
+    margin-top: 15px;
+}
+
+.mail-pulse-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #ff4a57; /* Utilise ta couleur d'accent rouge/orange */
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 1;
+}
+
+.mail-pulse-btn:hover {
+    transform: translateY(-3px);
+    background-color: #e03e4a; /* Teinte légèrement plus sombre au survol */
+    color: #ffffff;
+}
+
+/* L'effet de vague (Pulse) pour l'e-mail */
+.mail-pulse-btn .pulse-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    border: 2px solid #ff4a57;
+    animation: mailPulse 2s infinite ease-out;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+@keyframes mailPulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(1.15);
+        opacity: 0;
     }
 }
