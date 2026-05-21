@@ -23,316 +23,331 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
+        <div class="lang-switcher">
+    <button onclick="switchLanguage('fr')" class="lang-btn active">FR</button>
+    <button onclick="switchLanguage('en')" class="lang-btn">EN</button>
+    <button onclick="switchLanguage('de')" class="lang-btn">DE</button>
+</div>
     </nav>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Tsiry Haritiana RAKOTOARISOA</h1>
-            <h2>Ingénieur Cybersécurité & Développeur Web</h2>
-            <p>Allier la rigueur de la sécurité défensive à la passion du code pour bâtir des architectures résilientes.</p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn">Voir mes projets</a>
-                <a href="#contact" class="btn btn-alt">Me contacter</a>
-            </div>
+<header class="hero">
+    <div class="hero-content">
+        <h1 data-i18n="hero_title">Tsiry Haritiana RAKOTOARISOA</h1>
+        <h2 data-i18n="hero_subtitle">Ingénieur Cybersécurité</h2>
+        <p data-i18n="hero_pitch">Allier la rigueur de la sécurité défensive à la passion du code pour bâtir des architectures résilientes.</p>
+        <div class="hero-buttons">
+            <a href="#projects" class="btn" data-i18n="hero_btn_projects">Voir mes projets</a>
+            <a href="#contact" class="btn-secondary" data-i18n="hero_btn_contact">Me contacter</a>
         </div>
-    </header>
+    </div>
+</header>
 
-    <section id="about" class="about-section reveal">
-        <div class="container-fluid">
-            <h2 class="section-title">À Propos & Profil</h2>
+<section class="about-section reveal">
+    <div class="container-fluid">
+        <h2 class="section-title" data-i18n="about_title">À Propos & Profil</h2>
+        
+        <div class="about-dashboard">
             
-            <div class="about-dashboard">
-                
-                <div class="about-card profile-main-card">
-                    <div class="card-glow"></div>
-                    <div class="card-content">
-                        <span class="card-tag">SÉCURITÉ & CODE</span>
-                        <h3>Bâtir la confiance par la technique</h3>
-                        <p>Ingénieur spécialisé en cybersécurité, j'ai forgé mes premières armes dans le développement web. Le code reste une passion ancrée qui alimente ma compréhension technique, mais j'ai choisi la cybersécurité pour la complexité des défis et l'adrénaline qu'elle procure.</p>
-                        <p>Mon quotidien consiste à lier la rigueur de la gouvernance (ISO 27001, GDPR) à la réalité technique du terrain (VAPT, durcissement d'infrastructure) pour transformer la sécurité en levier de croissance.</p>
-                    </div>
+            <div class="about-card profile-main-card">
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <span class="card-tag" data-i18n="about_tag">SÉCURITÉ & CODE</span>
+                    <h3 data-i18n="about_headline">Bâtir la confiance par la technique</h3>
+                    <p data-i18n="about_pitch_1">Ingénieur spécialisé en cybersécurité, j'ai forgé mes premières armes dans le développement web. Le code reste une passion ancrée qui alimente ma compréhension technique, mais j'ai choisi la cybersécurité pour la complexité des défis et l'adrénaline qu'elle procure.</p>
+                    <p data-i18n="about_pitch_2">Mon quotidien consiste à lier la rigueur de la gouvernance (ISO 27001, GDPR) à la réalité technique du terrain (VAPT, durcissement d'infrastructure) pour transformer la sécurité en levier de croissance.</p>
                 </div>
-
-                <div class="about-card skills-human-card">
-                    <div class="card-glow"></div>
-                    <div class="card-content">
-                        <h3><i class="fa-solid fa-brain"></i> Compétences Humaines</h3>
-                        <ul class="human-skills-list">
-                            <li>
-                                <i class="fa-solid fa-circle-check"></i>
-                                <div class="skill-text">
-                                    <strong>Gestion de crise :</strong> Coordination d'équipes lors d'incidents.
-                                </div>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-circle-check"></i>
-                                <div class="skill-text">
-                                    <strong>Esprit d'analyse :</strong> Cartographie des risques et vulgarisation.
-                                </div>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-circle-check"></i>
-                                <div class="skill-text">
-                                    <strong>Curiosité technique :</strong> Veille constante sur les vulnérabilités (XSS, GRC).
-                                </div>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-circle-check"></i>
-                                <div class="skill-text">
-                                    <strong>Sens artistique :</strong> Approche créative issue de ma passion pour la photographie et l'art.
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="about-card languages-card">
-                    <div class="card-glow"></div>
-                    <div class="card-content">
-                        <h3><i class="fa-solid fa-language"></i> Profil Linguistique</h3>
-                        <div class="lang-progress-container">
-                            
-                            <div class="lang-bar-group">
-                                <div class="lang-labels"><span>Français</span><span class="lang-level">Courant</span></div>
-                                <div class="progress-line"><div class="progress-fill" style="width: 100%;"></div></div>
-                            </div>
-
-                            <div class="lang-bar-group">
-                                <div class="lang-labels"><span>Anglais</span><span class="lang-level">Courant</span></div>
-                                <div class="progress-line"><div class="progress-fill" style="width: 100%;"></div></div>
-                            </div>
-
-                            <div class="lang-bar-group highlight-lang">
-                                <div class="lang-labels"><span>Allemand</span><span class="lang-level-badge">Niveau B1</span></div>
-                                <div class="progress-line"><div class="progress-fill current-learning" style="width: 50%;"></div></div>
-                            </div>
-
-                            <div class="lang-bar-group">
-                                <div class="lang-labels"><span>Malagasy</span><span class="lang-level">Langue maternelle</span></div>
-                                <div class="progress-line"><div class="progress-fill" style="width: 100%;"></div></div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
             </div>
+
+            <div class="about-card skills-human-card">
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <h3><i class="fa-solid fa-brain"></i> <span data-i18n="about_skills_title">Compétences Humaines</span></h3>
+                    <ul class="human-skills-list">
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div class="skill-text">
+                                <strong data-i18n="skill_crisis_title">Gestion de crise :</strong> 
+                                <span data-i18n="skill_crisis_desc">Coordination d'équipes lors d'incidents.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div class="skill-text">
+                                <strong data-i18n="skill_analysis_title">Esprit d'analyse :</strong> 
+                                <span data-i18n="skill_analysis_desc">Cartographie des risques et vulgarisation.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div class="skill-text">
+                                <strong data-i18n="skill_curiosity_title">Curiosité technique :</strong> 
+                                <span data-i18n="skill_curiosity_desc">Veille constante sur les vulnérabilités (XSS, GRC).</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div class="skill-text">
+                                <strong data-i18n="skill_art_title">Sens artistique :</strong> 
+                                <span data-i18n="skill_art_desc">Approche créative issue de ma passion pour la photographie et l'art.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="about-card languages-card">
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <h3><i class="fa-solid fa-language"></i> <span data-i18n="about_lang_title">Profil Linguistique</span></h3>
+                    <div class="lang-progress-container">
+                        
+                        <div class="lang-bar-group">
+                            <div class="lang-labels"><span>Français</span><span class="lang-level" data-i18n="lang_fr_level">Courant</span></div>
+                            <div class="progress-line"><div class="progress-fill" style="width: 100%;"></div></div>
+                        </div>
+
+                        <div class="lang-bar-group">
+                            <div class="lang-labels"><span>Anglais</span><span class="lang-level" data-i18n="lang_en_level">Courant</span></div>
+                            <div class="progress-line"><div class="progress-fill" style="width: 100%;"></div></div>
+                        </div>
+
+                        <div class="lang-bar-group highlight-lang">
+                            <div class="lang-labels"><span>Allemand</span><span class="lang-level-badge" data-i18n="lang_de_level">Niveau B1</span></div>
+                            <div class="progress-line"><div class="progress-fill current-learning" style="width: 50%;"></div></div>
+                        </div>
+
+                        <div class="lang-bar-group">
+                            <div class="lang-labels"><span>Malagasy</span><span class="lang-level" data-i18n="lang_mg_level">Langue maternelle</span></div>
+                            <div class="progress-line"><div class="progress-fill" style="width: 100%;"></div></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
 <section id="experience" class="experience-section">
-        <div class="container-timeline">
-            <h2 class="section-title">Parcours Professionnel</h2>
-            
-            <div class="timeline-wrapper">
-                <div class="timeline-progress-line">
-                    <div class="timeline-progress-fill" id="experience-progress"></div>
-                </div>
-
-                <div class="timeline-block block-left reveal">
-                    <div class="timeline-dot"><i class="fa-solid fa-shield-halved"></i></div>
-                    <div class="timeline-card-content">
-                        <span class="experience-date">05/2024 - Présent</span>
-                        <h3>Deputy CISO & IT Infra Project Officer</h3>
-                        <h4>Ingedata <span class="location">| Antananarivo</span></h4>
-                        <p class="exp-summary">Gouvernance, stratégie Cyber et pilotage de la résilience des infrastructures critiques.</p>
-                        <ul class="exp-bullets">
-                            <li><i class="fa-solid fa-caret-right"></i> Co-pilotage de la stratégie cyber et maintien de la conformité (<strong>ISO 27001</strong>, <strong>GDPR</strong>, ISO 9001).</li>
-                            <li><i class="fa-solid fa-caret-right"></i> Direction des analyses de risques et déploiement des contre-mesures opérationnelles.</li>
-                            <li><i class="fa-solid fa-caret-right"></i> Gestion des incidents de sécurité et coordination des équipes de remédiation cross-fonctionnelles.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-block block-right reveal">
-                    <div class="timeline-dot"><i class="fa-solid fa-user-secret"></i></div>
-                    <div class="timeline-card-content">
-                        <span class="experience-date">12/2022 - 07/2023</span>
-                        <h3>Cyber Security Engineer</h3>
-                        <h4>VISEO Group <span class="location">| Antananarivo</span></h4>
-                        <p class="exp-summary">Audits de sécurité offensifs et défensifs pour la sécurisation des systèmes d'information.</p>
-                        <ul class="exp-bullets">
-                            <li><i class="fa-solid fa-caret-right"></i> Exécution de tests de pénétration (<strong>Pentesting / VAPT</strong>) et d'audits techniques.</li>
-                            <li><i class="fa-solid fa-caret-right"></i> Rédaction et mise à jour de la Politique de Sécurité des Systèmes d'Information (PSSI) interne.</li>
-                            <li><i class="fa-solid fa-caret-right"></i> Conception et préconisation d'architectures de solutions de sécurité correctives.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-block block-left reveal">
-                    <div class="timeline-dot"><i class="fa-solid fa-code"></i></div>
-                    <div class="timeline-card-content">
-                        <span class="experience-date">06/2022 - 12/2022</span>
-                        <h3>Web Developer</h3>
-                        <h4>Henri Fraise Fils & Cie <span class="location">| Antananarivo</span></h4>
-                        <p class="exp-summary">Développement d'outils applicatifs web métiers et industriels sécurisés.</p>
-                        <ul class="exp-bullets">
-                            <li><i class="fa-solid fa-caret-right"></i> Architecture et développement d'un outil web interne de reporting critique.</li>
-                            <li><i class="fa-solid fa-caret-right"></i> Conception d'une application web dédiée à la gestion de la flotte aéronautique de l'entreprise.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-block block-right reveal">
-                    <div class="timeline-dot"><i class="fa-solid fa-server"></i></div>
-                    <div class="timeline-card-content">
-                        <span class="experience-date">01/2021 - 05/2022</span>
-                        <h3>IT Tech Support</h3>
-                        <h4>Créacom <span class="location">| Antananarivo</span></h4>
-                        <p class="exp-summary">Administration des infrastructures systèmes et support technique de proximité.</p>
-                        <ul class="exp-bullets">
-                            <li><i class="fa-solid fa-caret-right"></i> Support utilisateur de Niveau 1 (systèmes, réseaux et applications).</li>
-                            <li><i class="fa-solid fa-caret-right"></i> Assistance active au déploiement, au câblage et à l'installation physique de nouveaux serveurs d'infrastructure.</li>
-                        </ul>
-                    </div>
-                </div>
-
+    <div class="container-timeline">
+        <h2 class="section-title" data-i18n="exp_title">Parcours Professionnel</h2>
+        
+        <div class="timeline-wrapper">
+            <div class="timeline-progress-line">
+                <div class="timeline-progress-fill" id="experience-progress"></div>
             </div>
+
+            <div class="timeline-block block-left reveal">
+                <div class="timeline-dot"><i class="fa-solid fa-shield-halved"></i></div>
+                <div class="timeline-card-content">
+                    <span class="experience-date" data-i18n="exp1_date">05/2024 - Présent</span>
+                    <h3>Deputy CISO & IT Infra Project Officer</h3>
+                    <h4>Ingedata <span class="location">| Antananarivo</span></h4>
+                    <p class="exp-summary" data-i18n="exp1_summary">Gouvernance, stratégie Cyber et pilotage de la résilience des infrastructures critiques.</p>
+                    <ul class="exp-bullets">
+                        <li><i class="fa-solid fa-caret-right"></i> <span data-i18n="exp1_bullet1">Co-pilotage de la stratégie cyber et maintien de la conformité (<strong>ISO 27001</strong>, <strong>GDPR</strong>, ISO 9001).</span></li>
+                        <li><i class="fa-solid fa-caret-right"></i> <span data-i18n="exp1_bullet2">Direction des analyses de risques et déploiement des contre-mesures opérationnelles.</span></li>
+                        <li><i class="fa-solid fa-caret-right"></i> <span data-i18n="exp1_bullet3">Gestion des incidents de sécurité et coordination des équipes de remédiation cross-fonctionnelles.</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-block block-right reveal">
+                <div class="timeline-dot"><i class="fa-solid fa-user-secret"></i></div>
+                <div class="timeline-card-content">
+                    <span class="experience-date" data-i18n="exp2_date">12/2022 - 07/2023</span>
+                    <h3>Cyber Security Engineer</h3>
+                    <h4>VISEO Group <span class="location">| Antananarivo</span></h4>
+                    <p class="exp-summary" data-i18n="exp2_summary">Audits de sécurité offensifs et défensifs pour la sécurisation des systèmes d'information.</p>
+                    <ul class="exp-bullets">
+                        <li><i class="fa-solid fa-caret-right"></i> <span data-i18n="exp2_bullet1">Exécution de tests de pénétration (<strong>Pentesting / VAPT</strong>) et d'audits techniques.</span></li>
+                        <li><i class="fa-solid fa-caret-right"></i> <span data-i18n="exp2_bullet2">Rédaction et mise à jour de la Politique de Sécurité des Systèmes d'Information (PSSI) interne.</span></li>
+                        <li><i class="fa-solid fa-caret-right"></i> <span data-i18n="exp2_bullet3">Conception et préconisation d'architectures de solutions de sécurité correctives.</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-block block-left reveal">
+                <div class="timeline-dot"><i class="fa-solid fa-code"></i></div>
+                <div class="timeline-card-content">
+                    <span class="experience-date" data-i18n="exp3_date">06/2022 - 12/2022</span>
+                    <h3>Web Developer</h3>
+                    <h4>Henri Fraise Fils & Cie <span class="location">| Antananarivo</span></h4>
+                    <p class="exp-summary" data-i18n="exp3_summary">Développement d'outils applicatifs web métiers et industriels sécurisés.</p>
+                    <ul class="exp-bullets">
+                        <li><i class="fa-solid fa-caret-right"></i> <span data-i18n="exp3_bullet1">Architecture et développement d'un outil web interne de reporting critique.</span></li>
+                        <li><i class="fa-solid fa-caret-right"></i> <span data-i18n="exp3_bullet2">Conception d'une application web dédiée à la gestion de la flotte aéronautique de l'entreprise.</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-block block-right reveal">
+                <div class="timeline-dot"><i class="fa-solid fa-server"></i></div>
+                <div class="timeline-card-content">
+                    <span class="experience-date" data-i18n="exp4_date">01/2021 - 05/2022</span>
+                    <h3>IT Tech Support</h3>
+                    <h4>Créacom <span class="location">| Antananarivo</span></h4>
+                    <p class="exp-summary" data-i18n="exp4_summary">Administration des infrastructures systèmes et support technique de proximité.</p>
+                    <ul class="exp-bullets">
+                        <li><i class="fa-solid fa-caret-right"></i> <span data-i18n="exp4_bullet1">Support utilisateur de Niveau 1 (systèmes, réseaux et applications).</span></li>
+                        <li><i class="fa-solid fa-caret-right"></i> <span data-i18n="exp4_bullet2">Assistance active au déploiement, au câblage et à l'installation physique de nouveaux serveurs d'infrastructure.</span></li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 <section id="projects" class="projects-section">
-        <div class="container-projects reveal">
-            <h2 class="section-title">Dépôts & Laboratoires SecOps</h2>
-            <p class="section-subtitle">Outils open-source et environnements de tests développés en JavaScript et Node.js.</p>
+    <div class="container-projects reveal">
+        <h2 class="section-title" data-i18n="projects_title">Audit automatisé des serveurs linux</h2>
+        <p class="section-subtitle" data-i18n="projects_subtitle">Un Workflow utilisant des outils OpenSource et des modèles IA pour pouvoir audité et automatisé les serveurs linux que ce soit ponctuel ou reccurents.</p>
+        
+        <div class="projects-dashboard-grid">
             
-            <div class="projects-dashboard-grid">
-                
-                <div class="cyber-project-card">
-                    <div class="project-card-header">
-                        <div class="status-indicator online"></div>
-                        <span class="project-category">ServGuard AI</span>
-                    </div>
-                    <h3>Audit automatisé des serveurs linux</h3>
-                    <p>Un Workflow utilisant des outils OpenSource et des modèles IA pour pouvoir audité et automatisé les serveurs linux que ce soit ponctuel ou reccurents.</p>
-                    <div class="project-tags-footer">
-                        <span class="badge-tech">Node.js</span>
-                        <span class="badge-tech">SecOps</span>
-                    </div>
+            <div class="cyber-project-card">
+                <div class="project-card-header">
+                    <div class="status-indicator online"></div>
+                    <span class="project-category">ServGuard AI</span>
                 </div>
-
-                <div class="cyber-project-card">
-                    <div class="project-card-header">
-                        <div class="status-indicator testing"></div>
-                        <span class="project-category">WEB APP</span>
-                    </div>
-                    <h3>Secure-by-Design Architecture</h3>
-                    <p>Une application web vitrine appliquant rigoureusement les standards de l'OWASP : gestion stricte des sessions, mécanismes contre les failles XSS/SQLi et chiffrement des données au repos.</p>
-                    <div class="project-tags-footer">
-                        <span class="badge-tech">JavaScript</span>
-                        <span class="badge-tech">OWASP Top 10</span>
-                    </div>
+                <h3 data-i18n="proj1_title">Audit automatisé des serveurs linux</h3>
+                <p data-i18n="proj1_desc">Un Workflow utilisant des outils OpenSource et des modèles IA pour pouvoir audité et automatisé les serveurs linux que ce soit ponctuel ou reccurents.</p>
+                <div class="project-tags-footer">
+                    <span class="badge-tech">Lynis</span>
+                    <span class="badge-tech">SecOps</span>
                 </div>
-
-                <div class="cyber-project-card">
-                    <div class="project-card-header">
-                        <div class="status-indicator stable"></div>
-                        <span class="project-category">WRITE-UPS</span>
-                    </div>
-                    <h3>CTF Labs & Penetration Reports</h3>
-                    <p>Documentation technique et rapports d'audits détaillant la compromission et la remédiation de machines vulnérables .</p>
-                    <div class="project-tags-footer">
-                        <span class="badge-tech">Markdown</span>
-                        <span class="badge-tech">VAPT</span>
-                    </div>
-                </div>
-
             </div>
+
+            <div class="cyber-project-card">
+                <div class="project-card-header">
+                    <div class="status-indicator testing"></div>
+                    <span class="project-category" data-i18n="proj2_category">WEB APP</span>
+                </div>
+                <h3 data-i18n="proj2_title">Secure-by-Design Architecture</h3>
+                <p data-i18n="proj2_desc">Une application web vitrine appliquant rigoureusement les standards de l'OWASP : gestion stricte des sessions, mécanismes contre les failles XSS/SQLi et chiffrement des données au repos.</p>
+                <div class="project-tags-footer">
+                    <span class="badge-tech">JavaScript</span>
+                    <span class="badge-tech">OWASP Top 10</span>
+                </div>
+            </div>
+
+            <div class="cyber-project-card">
+                <div class="project-card-header">
+                    <div class="status-indicator stable"></div>
+                    <span class="project-category" data-i18n="proj3_category">WRITE-UPS</span>
+                </div>
+                <h3 data-i18n="proj3_title">CTF Labs & Penetration Reports</h3>
+                <p data-i18n="proj3_desc">Documentation technique et rapports d'audits détaillant la compromission et la remédiation de machines vulnérables .</p>
+                <div class="project-tags-footer">
+                    <span class="badge-tech">Markdown</span>
+                    <span class="badge-tech">VAPT</span>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
- <section id="skills" class="skills-certs-section">
-        <div class="container-skills reveal">
+<section id="skills" class="skills-certs-section">
+    <div class="container-skills reveal">
+        
+        <div class="skills-certs-layout">
             
-            <div class="skills-certs-layout">
+            <div class="skills-panel">
+                <h2 class="panel-main-title" data-i18n="matrix_title"><i class="fa-solid fa-layer-group"></i> Matrice de Compétences</h2>
                 
-                <div class="skills-panel">
-                    <h2 class="panel-main-title"><i class="fa-solid fa-layer-group"></i> Matrice de Compétences</h2>
-                    <div class="skills-category-box">
-                        <h3>Gouvernance, Risques & Conformité</h3>
-                        <div class="skills-custom-tags">
-                            <span>Cybersecurity Strategy & Governance</span>
-                            <span>Risk Management & Mitigation</span>
-                            <span>Information Security Policies & Compliance</span>
-                            <span>Incident Response & Disaster Recovery</span>
-                        </div>
-                    </div>
-                    <div class="skills-category-box">
-                        <h3>Sécurité Technique & Code</h3>
-                        <div class="skills-custom-tags">
-                            <span>Vulnerability Assessment (VAPT)</span>
-                            <span>Network Security</span>
-                            <span>Linux System Administration</span>
-                            <span>JavaScript (Node.js)</span>
-                        </div>
+                <div class="skills-category-box">
+                    <h3 data-i18n="matrix_cat1">Gouvernance, Risques & Conformité</h3>
+                    <div class="skills-custom-tags">
+                        <span>Cybersecurity Strategy & Governance</span>
+                        <span>Risk Management & Mitigation</span>
+                        <span>Information Security Policies & Compliance</span>
+                        <span>Incident Response & Disaster Recovery</span>
                     </div>
                 </div>
-
-                <div class="certs-panel">
-                    <h2 class="panel-main-title"><i class="fa-solid fa-shield-halved"></i> Certifications Validées</h2>
-                    <div class="certs-grid-display">
-                        
-                        <div class="cert-badge-card">
-                            <div class="cert-icon-wrapper"><i class="fa-solid fa-user-ninja"></i></div>
-                            <div class="cert-badge-details">
-                                <h4>CompTIA PenTest+</h4>
-                                <p>Vulnerability & Penetration Testing</p>
-                                <span class="cert-meta">Skillsoft • ID: 6886891</span>
-                            </div>
-                        </div>
-
-                        <div class="cert-badge-card">
-                            <div class="cert-icon-wrapper"><i class="fa-solid fa-chart-line"></i></div>
-                            <div class="cert-badge-details">
-                                <h4>CompTIA CySA+</h4>
-                                <p>Cybersecurity Analyst (Incident Response)</p>
-                                <span class="cert-meta">Skillsoft • ID: 7043461</span>
-                            </div>
-                        </div>
-
-                        <div class="cert-badge-card">
-                            <div class="cert-icon-wrapper"><i class="fa-solid fa-terminal"></i></div>
-                            <div class="cert-badge-details">
-                                <h4>Ethical Hacker</h4>
-                                <p>Security Controls & Countermeasures</p>
-                                <span class="cert-meta">Skillsoft • ID: 6896568</span>
-                            </div>
-                        </div>
-
-                        <div class="cert-badge-card">
-                            <div class="cert-icon-wrapper"><i class="fa-solid fa-building-shield"></i></div>
-                            <div class="cert-badge-details">
-                                <h4>CISSP Modules</h4>
-                                <p>Security Governance Principles</p>
-                                <span class="cert-meta">Skillsoft • ID: 6894759</span>
-                            </div>
-                        </div>
-
+                
+                <div class="skills-category-box">
+                    <h3 data-i18n="matrix_cat2">Sécurité Technique & Code</h3>
+                    <div class="skills-custom-tags">
+                        <span>Vulnerability Assessment (VAPT)</span>
+                        <span>Network Security</span>
+                        <span>Linux System Administration</span>
+                        <span>JavaScript (Node.js)</span>
                     </div>
                 </div>
+            </div>
 
-            </div> </div> </section>
+            <div class="certs-panel">
+                <h2 class="panel-main-title" data-i18n="certs_title"><i class="fa-solid fa-shield-halved"></i> Certifications Validées</h2>
+                <div class="certs-grid-display">
+                    
+                    <div class="cert-badge-card">
+                        <div class="cert-icon-wrapper"><i class="fa-solid fa-user-ninja"></i></div>
+                        <div class="cert-badge-details">
+                            <h4>CompTIA PenTest+</h4>
+                            <p data-i18n="cert1_desc">Vulnerability & Penetration Testing</p>
+                            <span class="cert-meta">Skillsoft • ID: 6886891</span>
+                        </div>
+                    </div>
+
+                    <div class="cert-badge-card">
+                        <div class="cert-icon-wrapper"><i class="fa-solid fa-chart-line"></i></div>
+                        <div class="cert-badge-details">
+                            <h4>CompTIA CySA+</h4>
+                            <p data-i18n="cert2_desc">Cybersecurity Analyst (Incident Response)</p>
+                            <span class="cert-meta">Skillsoft • ID: 7043461</span>
+                        </div>
+                    </div>
+
+                    <div class="cert-badge-card">
+                        <div class="cert-icon-wrapper"><i class="fa-solid fa-terminal"></i></div>
+                        <div class="cert-badge-details">
+                            <h4>Ethical Hacker</h4>
+                            <p data-i18n="cert3_desc">Security Controls & Countermeasures</p>
+                            <span class="cert-meta">Skillsoft • ID: 6896568</span>
+                        </div>
+                    </div>
+
+                    <div class="cert-badge-card">
+                        <div class="cert-icon-wrapper"><i class="fa-solid fa-building-shield"></i></div>
+                        <div class="cert-badge-details">
+                            <h4>CISSP Modules</h4>
+                            <p data-i18n="cert4_desc">Security Governance Principles</p>
+                            <span class="cert-meta">Skillsoft • ID: 6894759</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div> 
+    </div> 
+</section>
 
 <footer class="cyber-footer">
-        <div class="footer-container">
-            
-            <div class="footer-channels">
-                <span class="channel-title">Pour me contacter directement :</span>
-                <div class="channels-list">
-                    <a href="https://wa.me/261347505887" target="_blank" class="whatsapp-pulse-btn" aria-label="Discuter sur WhatsApp">
-                        <span class="pulse-ring"></span>
-                        <i class="fa-brands fa-whatsapp"></i> +261 34 75 058 87
-                    </a>
-                </div>
+    <div class="footer-container">
+        
+        <div class="footer-channels">
+            <span class="channel-title" data-i18n="footer_channel_title">Pour me contacter directement :</span>
+            <div class="channels-list">
+                <a href="https://wa.me/261347505887" target="_blank" class="whatsapp-pulse-btn" aria-label="Discuter sur WhatsApp">
+                    <span class="pulse-ring"></span>
+                    <i class="fa-brands fa-whatsapp"></i> +261 34 75 058 87
+                </a>
             </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2026 Tsiry Haritiana RAKOTOARISOA. Conçu de manière sécurisée et optimisé pour la production.</p>
-                <div class="sec-status"><div class="status-indicator online">
-            </div>
-
         </div>
-    </footer>
 
+        <div class="footer-bottom">
+            <p>&copy; 2026 Tsiry Haritiana RAKOTOARISOA. <span data-i18n="footer_rights">Conçu de manière sécurisée et optimisé pour la production.</span></p>
+            <div class="sec-status">
+                <div class="status-indicator online"></div>
+            </div>
+        </div>
+
+    </div>
+</footer>
+<script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
