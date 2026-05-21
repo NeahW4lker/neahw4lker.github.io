@@ -1,283 +1,1038 @@
+/* VARIABLES DE COULEURS */
+:root {
+    --bg-main: #ECF0F1;         /* Gris clair/Clouds */
+    --bg-card: #FFFFFF;         /* Blanc pur pour la lisibilité */
+    --primary-dark: #2C3E50;    /* Bleu nuit profond / Midnight Blue */
+    --secondary-dark: #34495E;  /* Gris-Bleu / Wet Asphalt */
+    --accent: #E74C3C;          /* Rouge vif / Alizarin */
+    --accent-hover: #C0392B;    /* Rouge foncé / Asbestos */
+}
+
 /* RESET & FONTS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #2c3e50;
-    background-color: #ffffff;
+    color: var(--secondary-dark);
+    background-color: var(--bg-main);
     line-height: 1.6;
+    overflow-x: hidden;
 }
+
+/* CANVAS DE FOND */
+#cyber-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0; /* Derrière tout le contenu */
+    pointer-events: none; /* Laisse passer les clics */
+}
+
 a {
     text-decoration: none;
     color: inherit;
 }
+
 ul {
     list-style: none;
 }
+
 .container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 80px 20px;
+    padding: 90px 20px;
+    position: relative;
+    z-index: 2;
 }
-.bg-light {
-    background-color: #f8f9fa;
+
+.bg-section {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px); /* Effet verre dépoli moderne */
 }
+
 .text-center {
     text-align: center;
 }
-.text-primary {
-    color: #00adb5;
+
+.text-accent {
+    color: var(--accent);
 }
 
 /* NAVBAR */
 nav {
-    background-color: #1a1a24;
-    color: #ffffff;
+    background-color: var(--primary-dark);
+    color: var(--bg-main);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
+
 .nav-container {
     max-width: 1100px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 18px 20px;
 }
+
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #00adb5;
+    color: var(--accent);
 }
+
 nav ul {
     display: flex;
 }
+
 nav ul li {
-    margin-left: 20px;
+    margin-left: 25px;
 }
+
+nav ul li a {
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
 nav ul li a:hover {
-    color: #00adb5;
-    transition: 0.3s;
+    color: var(--accent);
 }
 
 /* HERO */
 .hero {
-    background: linear-gradient(135deg, #1a1a24 0%, #2a2a3a 100%);
-    color: #ffffff;
-    height: 80vh;
+    position: relative;
+    z-index: 2;
+    height: 85vh;
     display: flex;
     align-items: center;
     text-align: center;
     padding-top: 60px;
 }
+
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
 }
+
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-.hero h2 {
-    font-size: 1.5rem;
-    color: #00adb5;
-    font-weight: 400;
-    margin-bottom: 25px;
-}
-.hero p {
-    font-size: 1.1rem;
-    color: #abb2bf;
-    margin-bottom: 40px;
-}
-.btn {
-    display: inline-block;
-    background-color: #00adb5;
-    color: #fff;
-    padding: 12px 30px;
-    border-radius: 5px;
-    font-weight: bold;
-    margin: 5px;
-    transition: 0.3s;
-}
-.btn:hover {
-    background-color: #008c95;
-}
-.btn-alt {
-    background-color: transparent;
-    border: 2px solid #ffffff;
-}
-.btn-alt:hover {
-    background-color: #ffffff;
-    color: #1a1a24;
+    font-size: 3.2rem;
+    margin-bottom: 12px;
+    color: var(--primary-dark);
 }
 
-/* SECTIONS COMMUNE */
+.hero h2 {
+    font-size: 1.6rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: var(--secondary-dark);
+    margin-bottom: 40px;
+}
+
+/* BOUTONS */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-dark);
+    color: var(--bg-main);
+    padding: 12px 32px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: var(--secondary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-alt {
+    background-color: var(--accent);
+}
+
+.btn-alt:hover {
+    background-color: var(--accent-hover);
+}
+
+/* JAVASCRIPT SCROLL REVEAL EFFETS */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* TITRES */
 .section-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 45px;
     position: relative;
     padding-bottom: 15px;
+    color: var(--primary-dark);
 }
+
 .section-title::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 50px;
-    height: 3px;
-    background-color: #00adb5;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent);
 }
 
-/* ABOUT */
-.about-grid {
-    display: grid;
-    grid-template-columns: 2sfr 1fr;
-    gap: 40px;
-    margin-top: 50px;
-}
-@media (max-width: 768px) {
-    .about-grid { grid-template-columns: 1fr; }
-}
-.languages-box {
-    background-color: #f8f9fa;
-    padding: 25px;
-    border-left: 4px solid #00adb5;
-    border-radius: 4px;
-}
-.languages-box h3 { margin-bottom: 15px; }
-.languages-box li { margin-bottom: 8px; }
-
-/* TIMELINE (EXPERIENCE) */
-.timeline {
-    margin-top: 50px;
-    border-left: 2px solid #e9ecef;
-    padding-left: 20px;
-}
-.timeline-item {
-    margin-bottom: 40px;
+/* DESIGN DE LA NOUVELLE SECTION ABOUT */
+.about-section {
+    background-color: var(--primary-dark); /* Fond sombre pour trancher radicalement avec le reste */
+    color: #FFFFFF;
+    padding: 100px 20px;
     position: relative;
-}
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -27px;
-    top: 5px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #00adb5;
-}
-.timeline-date {
-    font-weight: bold;
-    color: #00adb5;
-    font-size: 0.9rem;
-}
-.timeline-content h3 {
-    font-size: 1.3rem;
-    margin: 5px 0;
-}
-.timeline-content h4 {
-    font-weight: 500;
-    color: #6c757d;
-    margin-bottom: 10px;
+    z-index: 2;
 }
 
-/* PROJECTS */
-.projects-grid {
+/* Forcer le titre à être blanc sur cette section */
+.about-section .section-title {
+    color: #FFFFFF;
+}
+
+.container-fluid {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Grille Asymétrique type Tableau de bord */
+.about-dashboard {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 25px;
     margin-top: 50px;
 }
-.project-card {
-    background-color: #fff;
-    padding: 30px;
+
+/* Style de base des cartes */
+.about-card {
+    background-color: var(--secondary-dark);
+    border: 1px solid rgba(235, 240, 241, 0.1);
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    border: 1px solid #e9ecef;
-    transition: transform 0.3s;
-}
-.project-card:hover {
-    transform: translateY(-50px);
-}
-.project-icon {
-    font-size: 2.5rem;
-    color: #00adb5;
-    margin-bottom: 15px;
-}
-.project-card h3 {
-    margin-bottom: 12px;
-}
-.project-card p {
-    color: #6c757d;
-    font-size: 0.95rem;
-    margin-bottom: 20px;
-}
-.project-link {
-    font-weight: bold;
-    color: #00adb5;
+    padding: 35px;
+    position: relative;
+    overflow: hidden; /* Important pour l'effet de lueur */
+    transition: transform 0.3s ease;
 }
 
-/* SKILLS & CERTS */
-.skills-certs-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
+.about-card:hover {
+    transform: translateY(-5px);
 }
-@media (max-width: 768px) {
-    .skills-certs-grid { grid-template-columns: 1fr; }
+
+/* Contenu au-dessus de la lueur */
+.card-content {
+    position: relative;
+    z-index: 3;
 }
-.skills-certs-grid h3 {
-    margin-bottom: 25px;
-    font-size: 1.4rem;
-}
-.skills-tags {
-    display: flex;
-    flex-wrap: wrap;
-}
-.skills-tags span {
-    background-color: #e3fafc;
-    color: #0b818a;
-    padding: 8px 15px;
-    margin: 5px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 500;
-}
-.certs-list li {
+
+/* Balises et éléments graphiques */
+.card-tag {
+    display: inline-block;
+    background-color: var(--accent);
+    color: #FFFFFF;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 3px;
     margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.about-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: #FFFFFF;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-/* CONTACT & FOOTER */
-.contact-links {
-    margin-top: 30px;
+.profile-main-card h3 {
+    font-size: 1.8rem;
+    line-height: 1.3;
 }
-.contact-links a {
-    display: inline-block;
-    margin: 0 15px;
-    font-size: 1.2rem;
-    color: #1a1a24;
+
+.profile-main-card p {
+    color: #ECF0F1;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+/* Liste des compétences humaines */
+/* CORRECTIF D'ALIGNEMENT DES SOFT SKILLS */
+.human-skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.human-skills-list li {
+    margin-bottom: 20px; /* Un peu plus d'espace pour respirer */
+    font-size: 0.95rem;
+    color: #ECF0F1;
+    display: grid;
+    grid-template-columns: 20px 1fr; /* 20px de largeur fixe pour l'icône, le reste pour le texte */
+    gap: 12px; /* Espace net entre l'icône et le début du texte */
+    align-items: start; /* Aligne l'icône en haut si le texte fait plusieurs lignes */
+    line-height: 1.5;
+}
+
+.human-skills-list li i {
+    color: var(--accent);
+    margin-top: 3px; /* Centre parfaitement l'icône avec la première ligne de texte */
+    font-size: 0.9rem;
+}
+
+.skill-text {
+    display: inline; /* Garantit que le strong et sa description coulent naturellement */
+}
+
+.skill-text strong {
+    color: #FFFFFF; /* Rend le titre de la soft skill légèrement plus brillant pour contraster */
+    font-weight: 600;
+    white-space: nowrap; /* Empêche le titre de se couper en deux avant les deux points */
+}
+
+/* Graphiques de barres de langues */
+.lang-progress-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.lang-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
     font-weight: 500;
 }
-.contact-links a:hover {
-    color: #00adb5;
+
+.lang-level {
+    color: #BDC3C7;
+    font-size: 0.8rem;
 }
-footer {
-    background-color: #1a1a24;
-    color: #7f8c8d;
-    text-align: center;
+
+.lang-level-badge {
+    background-color: var(--accent);
+    color: white;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+.progress-line {
+    width: 100%;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+
+/* Mise en valeur spécifique de l'Allemand */
+.highlight-lang .lang-labels span:first-child {
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.progress-fill.current-learning {
+    background: linear-gradient(90deg, #FFFFFF, var(--accent));
+}
+
+/* EFFET DE LUEUR INTERACTIVE (Glow Layer) via JS */
+.card-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(250px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(231, 76, 60, 0.15), transparent 80%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* RESPONSIVE DESIGN FOR DASHBOARD */
+@media (max-width: 992px) {
+    .about-dashboard {
+        grid-template-columns: 1fr 1fr;
+    }
+    .profile-main-card {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-dashboard {
+        grid-template-columns: 1fr;
+    }
+    .profile-main-card {
+        grid-column: span 1;
+    }
+}
+
+/* DESIGN DU PARCOURS PRO (TIMELINE ASYMÉTRIQUE) */
+.experience-section {
+    background-color: var(--bg-main); /* Reprend le gris clair #ECF0F1 */
+    padding: 100px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.container-timeline {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.timeline-wrapper {
+    position: relative;
+    margin-top: 60px;
+    padding: 20px 0;
+}
+
+/* Ligne centrale fixe (Gris neutre en arrière-plan) */
+.timeline-progress-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: rgba(44, 62, 80, 0.1); /* Couleur translucide */
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* Ligne de remplissage dynamique via JS (Rouge Cyber #E74C3C) */
+.timeline-progress-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0%; /* Contrôlé par JS au scroll */
+    background: linear-gradient(to bottom, var(--primary-dark), var(--accent));
+    box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+    transition: height 0.1s ease-out;
+}
+
+/* Structure des blocs d'expérience */
+.timeline-block {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Alternance des blocs */
+.block-left { flex-direction: row-reverse; }
+.block-right { flex-direction: row; }
+
+/* Conteneur vide pour pousser le contenu d'un seul côté */
+.timeline-block::after {
+    content: '';
+    width: 45%;
+}
+
+/* Le conteneur de la carte de l'expérience */
+.timeline-card-content {
+    width: 45%;
+    background-color: var(--bg-card); /* Blanc pur */
     padding: 30px;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(44, 62, 80, 0.05);
+    border: 1px solid rgba(44, 62, 80, 0.05);
+    border-top: 4px solid var(--primary-dark); /* Accent initial */
+    transition: border-color 0.4s ease, transform 0.3s ease;
+}
+
+/* Effet d'activation de la bordure quand la section devient visible */
+.timeline-block.active .timeline-card-content {
+    border-top-color: var(--accent); /* Devient rouge vif */
+}
+
+.timeline-card-content:hover {
+    transform: translateY(-5px);
+}
+
+/* Pastille centrale iconographique */
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    top: 25px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-dark);
+    color: #FFFFFF;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    z-index: 3;
+    border: 3px solid var(--bg-main);
+    transition: background-color 0.4s ease, scale 0.3s ease;
+}
+
+/* La puce s'illumine en rouge quand le scroll l'atteint */
+.timeline-block.active .timeline-dot {
+    background-color: var(--accent);
+    scale: 1.1;
+}
+
+/* Éléments textuels internes */
+.experience-date {
+    display: inline-block;
+    color: var(--accent);
+    font-weight: bold;
     font-size: 0.9rem;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.timeline-card-content h3 {
+    font-size: 1.3rem;
+    color: var(--primary-dark);
+    margin-bottom: 4px;
+}
+
+.timeline-card-content h4 {
+    font-size: 1rem;
+    color: var(--secondary-dark);
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.location {
+    color: #7F8C8D;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+.exp-summary {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #7F8C8D;
+    margin-bottom: 15px;
+}
+
+.exp-bullets li {
+    font-size: 0.9rem;
+    color: var(--secondary-dark);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.5;
+}
+
+.exp-bullets li i {
+    color: var(--accent);
+    margin-top: 4px;
+    font-size: 0.8rem;
+}
+
+/* RESPONSIVE DESIGN (Passage en mode vertical simple sur Mobile) */
+@media (max-width: 768px) {
+    .timeline-progress-line {
+        left: 20px;
+        transform: none;
+    }
+    
+    .timeline-block {
+        flex-direction: row !important;
+        margin-bottom: 35px;
+    }
+
+    .timeline-block::after {
+        display: none; /* Supprime le bloc de poussée vide */
+    }
+
+    .timeline-card-content {
+        width: calc(100% - 50px);
+        margin-left: 50px;
+    }
+
+    .timeline-dot {
+        left: 20px;
+        transform: translateX(-50%);
+    }
+}
+
+/* ==========================================================================
+   REFONTE DE LA SECTION PROJETS
+   ========================================================================== */
+.projects-section {
+    background-color: var(--primary-dark); /* Thème sombre #2C3E50 pour alterner */
+    color: #FFFFFF;
+    padding: 100px 20px;
+    position: relative;
+    z-index: 2;
+    display: block; /* Sécurité anti-flex bug */
+    clear: both;
+}
+
+.projects-section .section-title {
+    color: #FFFFFF;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #BDC3C7;
+    margin-top: -30px;
+    margin-bottom: 50px;
+    font-size: 1rem;
+}
+
+.container-projects {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Grille de projets asymétrique au survol */
+.projects-dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* Cartes Projets Cyber-Ops */
+.cyber-project-card {
+    background-color: var(--secondary-dark);
+    border: 1px solid rgba(235, 240, 241, 0.08);
+    padding: 35px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cyber-project-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 35px rgba(231, 76, 60, 0.1);
+}
+
+.project-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* Indicateurs de statut style monitoring */
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.status-indicator.online { background-color: #2ECC71; box-shadow: 0 0 8px #2ECC71; }
+.status-indicator.testing { background-color: #F1C40F; box-shadow: 0 0 8px #F1C40F; }
+.status-indicator.stable { background-color: var(--accent); box-shadow: 0 0 8px var(--accent); }
+
+.project-category {
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #BDC3C7;
+}
+
+.cyber-project-card h3 {
+    font-size: 1.4rem;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+}
+
+.cyber-project-card p {
+    color: #ECF0F1;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.project-tags-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-top: 1px solid rgba(235, 240, 241, 0.1);
+    padding-top: 20px;
+}
+
+.badge-tech {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+    padding: 4px 12px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.project-action-link {
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s ease;
+}
+
+.project-action-link:hover {
+    color: #FFFFFF;
+}
+
+
+/* ==========================================================================
+   REFONTE SKILLS & CERTIFICATIONS (PANNEAU DOUBLE)
+   ========================================================================== */
+.skills-certs-section {
+    background-color: var(--bg-main); /* Fond clair #ECF0F1 */
+    padding: 100px 20px;
+    position: relative;
+    z-index: 2;
+    display: block;
+    clear: both;
+}
+
+.container-skills {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skills-certs-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.panel-main-title {
+    font-size: 1.6rem;
+    color: var(--primary-dark);
+    margin-bottom: 35px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 2px solid rgba(44, 62, 80, 0.1);
+    padding-bottom: 15px;
+}
+
+/* Compétences */
+.skills-category-box {
+    background-color: var(--bg-card);
+    padding: 30px;
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    margin-bottom: 25px;
+    border-left: 4px solid var(--primary-dark);
+}
+
+.skills-category-box h3 {
+    font-size: 1.1rem;
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+}
+
+.skills-custom-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skills-custom-tags span {
+    background-color: var(--secondary-dark);
+    color: #FFFFFF;
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-radius: 3px;
+}
+
+/* Certifications (Badges) */
+.certs-grid-display {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cert-badge-card {
+    background-color: var(--bg-card);
+    padding: 20px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    border: 1px solid rgba(44, 62, 80, 0.05);
+    transition: border-color 0.3s ease;
+}
+
+.cert-badge-card:hover {
+    border-color: var(--accent);
+}
+
+.cert-icon-wrapper {
+    background-color: var(--primary-dark);
+    color: #FFFFFF;
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.cert-badge-card:hover .cert-icon-wrapper {
+    background-color: var(--accent);
+}
+
+.cert-badge-details h4 {
+    font-size: 1.1rem;
+    color: var(--primary-dark);
+    margin-bottom: 2px;
+}
+
+.cert-badge-details p {
+    font-size: 0.9rem;
+    color: var(--secondary-dark);
+    font-weight: 500;
+}
+
+.cert-meta {
+    display: block;
+    font-size: 0.75rem;
+    color: #7F8C8D;
+    margin-top: 4px;
+}
+
+
+/* ==========================================================================
+   REFONTE DU FOOTER & ANIMATION WHATSAPP RADAR
+   ========================================================================== */
+.cyber-footer {
+    background-color: var(--primary-dark); /* Bleu nuit profond #2C3E50 */
+    color: #ECF0F1;
+    padding: 45px 20px 30px 20px;
+    position: relative;
+    z-index: 2;
+    display: block;
+    clear: both;
+    border-top: 1px solid rgba(235, 240, 241, 0.05);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+/* Alignement de la section de contact rapide */
+.footer-channels {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: rgba(52, 73, 94, 0.4); /* Wet Asphalt translucide */
+    padding: 20px 30px;
+    border-radius: 6px;
+    border: 1px solid rgba(235, 240, 241, 0.03);
+}
+
+.channel-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #BDC3C7;
+    letter-spacing: 0.5px;
+}
+
+.channels-list {
+    display: flex;
+    align-items: center;
+}
+
+/* BOUTON INTERACTIF WHATSAPP AVEC PULSATION RADAR */
+.whatsapp-pulse-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #25D366; /* Vert officiel WhatsApp */
+    color: #FFFFFF;
+    padding: 10px 22px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+}
+
+.whatsapp-pulse-btn i {
+    font-size: 1.2rem;
+}
+
+/* Anneau de pulsation extérieur */
+.pulse-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    border: 2px solid #25D366;
+    pointer-events: none;
+    animation: pulse-wave 2s infinite ease-out;
+}
+
+.whatsapp-pulse-btn:hover {
+    background-color: #128C7E; /* Vert plus foncé au survol */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(18, 140, 126, 0.4);
+}
+
+/* Définition mathématique de la vague radar en CSS */
+@keyframes pulse-wave {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.08, 1.25); /* Dilatation asymétrique pour épouser le rectangle */
+        opacity: 0;
+    }
+}
+
+/* Ligne basse du Footer (Copyright & Signaux techniques) */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 0.85rem;
+    color: #7F8C8D;
+}
+
+.sec-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 4px 12px;
+    border-radius: 3px;
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: #BDC3C7;
+}
+
+/* Ajustement responsive mobile */
+@media (max-width: 768px) {
+    .footer-channels {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+    .whatsapp-pulse-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* RESPONSIVE STRUCTURE */
+@media (max-width: 992px) {
+    .skills-certs-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+/* ==========================================================================
+   CURSEUR CYBER PERSONNALISÉ
+   ========================================================================== */
+@media (min-width: 992px) {
+    /* Masquer le curseur par défaut du système sur ordinateur */
+    html, body, a, button, .about-card, .cyber-project-card {
+        cursor: none !important;
+    }
+
+    /* Le point central (immédiat) */
+    .custom-cursor-dot {
+        width: 6px;
+        height: 6px;
+        background-color: var(--accent); /* Ton rouge #E74C3C */
+        position: fixed;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        z-index: 9999;
+        pointer-events: none; /* Évite de bloquer les clics */
+        transition: width 0.2s, height 0.2s, background-color 0.2s;
+    }
+
+    /* Le cercle extérieur (qui suit avec un léger retard) */
+    .custom-cursor {
+        width: 26px;
+        height: 26px;
+        border: 2px solid var(--accent);
+        position: fixed;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        z-index: 9998;
+        pointer-events: none;
+        /* Transition fluide pour l'effet d'aimant et d'expansion */
+        transition: transform 0.08s cubic-bezier(0.25, 1, 0.5, 1), width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s;
+    }
+
+    /* ÉTAT DE SURVOL (Hover State) via JS */
+    .custom-cursor.cursor-hover {
+        width: 45px;
+        height: 45px;
+        background-color: rgba(231, 76, 60, 0.08); /* Effet de loupe translucide */
+        border-color: var(--accent);
+    }
+    
+    .custom-cursor-dot.cursor-hover {
+        width: 10px;
+        height: 10px;
+        background-color: #FFFFFF; /* Le point devient blanc au survol */
+    }
 }
