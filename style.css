@@ -1067,3 +1067,105 @@ nav ul li a:hover {
     border-color: var(--accent);
     box-shadow: 0 0 10px rgba(231, 76, 60, 0.3);
 }
+/* ==========================================================================
+   ⚡ DESIGN RESPONSIVE & OPTIMISATIONS MOBILES (< 768px)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    
+    /* 1. Global & Containers */
+    .container-fluid, 
+    .container-timeline, 
+    .container-projects, 
+    .container-skills {
+        width: 100% !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        overflow-x: hidden;
+    }
+
+    /* 2. Hero Header */
+    .hero {
+        padding: 60px 20px !important;
+        text-align: center;
+    }
+    .hero h1 {
+        font-size: 2rem !important; /* Réduit le grand titre pour éviter qu'il déborde */
+        word-wrap: break-word;
+    }
+    .hero-buttons {
+        display: flex;
+        flex-direction: column; /* Aligne les boutons verticalement sur mobile */
+        gap: 15px;
+        align-items: center;
+    }
+    .hero-buttons .btn, 
+    .hero-buttons .btn-secondary {
+        width: 100%; /* Les boutons prennent toute la largeur disponible */
+        max-width: 300px;
+    }
+
+    /* 3. À Propos (About Dashboard) */
+    .about-dashboard {
+        display: flex;
+        flex-direction: column !important; /* Force le passage en colonne unique */
+        gap: 20px !important;
+    }
+    .about-card {
+        width: 100% !important;
+    }
+
+    /* 4. Parcours Professionnel (Timeline) */
+    .timeline-wrapper {
+        padding: 10px 0 !important;
+    }
+    /* On déplace la ligne verticale tout à gauche */
+    .timeline-progress-line {
+        left: 20px !important;
+    }
+    /* Tous les blocs s'alignent désormais le long de cette ligne à gauche */
+    .timeline-block {
+        width: 100% !important;
+        padding-left: 50px !important;
+        padding-right: 0 !important;
+        margin-bottom: 30px !important;
+    }
+    /* On force l'orientation de toutes les cartes dans le même sens */
+    .block-left, .block-right {
+        left: 0 !important;
+    }
+    /* Repositionnement précis des icônes de la timeline */
+    .timeline-dot {
+        left: 20px !important;
+        transform: translateX(-50%) !important;
+    }
+
+    /* 5. Grille des Projets GitHub */
+    .projects-dashboard-grid {
+        grid-template-columns: 1fr !important; /* Une seule carte par ligne */
+        gap: 20px !important;
+    }
+
+    /* 6. Matrice de Compétences & Certifications */
+    .skills-certs-layout {
+        display: flex;
+        flex-direction: column !important; /* Sépare la matrice des certifs */
+        gap: 40px !important;
+    }
+    .skills-custom-tags {
+        justify-content: center; /* Centre les compétences techniques */
+    }
+    .certs-grid-display {
+        grid-template-columns: 1fr !important; /* Une certif par ligne */
+    }
+
+    /* 7. Footer */
+    .footer-container {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 25px;
+    }
+    .footer-bottom {
+        flex-direction: column !important;
+        gap: 15px;
+    }
+}
