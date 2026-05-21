@@ -22,7 +22,7 @@ Je suis un **Ingénieur Cybersécurité** passionné, avec de solides fondations
 *(Mets ici des liens vers tes meilleurs dépôts GitHub décrits ci-dessous)*
 
 1. **ServGuardAI** - Outil d'automatisation de conformité / durcissement boosté avec de l'AI pour les serveurs linux avec un côut fortement réduit.
-2. **SOC 100% Opensource et automatisées ** - Mise en place d'un SOC 100% opensource et automatisées en utilisant Wazuh - Tracecat/n8n - GLPI.
+2. **SOC 100% Opensource et automatisées** - Mise en place d'un SOC 100% opensource et automatisées en utilisant Wazuh - Tracecat/n8n - GLPI.
 
 ---
 
