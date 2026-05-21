@@ -1169,3 +1169,35 @@ nav ul li a:hover {
         gap: 15px;
     }
 }
+/* À insérer à la fin de ton bloc @media screen and (max-width: 768px) */
+
+.cyber-header { /* Ajuste avec le nom de classe exact de ta navbar si besoin */
+    padding: 10px 15px !important;
+}
+
+/* 1. On empile le menu ou on lui donne une structure propre */
+.nav-container, .navbar { 
+    display: flex;
+    flex-direction: column !important; /* Met le logo, les liens et les langues les uns sous les autres */
+    gap: 12px !important;
+    align-items: center;
+    text-align: center;
+}
+
+/* 2. On gère la liste des liens pour qu'elle s'affiche horizontalement avec flex-wrap ou en bloc */
+.nav-links, .menu-links {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux liens de passer à la ligne proprement si l'écran est minuscule */
+    justify-content: center;
+    gap: 15px !important;
+    padding: 0;
+    margin: 0;
+}
+
+/* 3. Groupe contenant tes boutons de langue FR | EN | DE */
+.lang-switcher-container, .lang-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 8px !important;
+    margin-top: 5px;
+}
