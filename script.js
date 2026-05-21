@@ -190,18 +190,21 @@ function switchLanguage(lang) {
     if (!i18nTranslations || !i18nTranslations[lang]) return;
 
     // Traduit chaque balise dotée de l'attribut data-i18n
-    document.querySelectorAll('[data-i18n]').forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        if (i18nTranslations[lang][key]) {
-            element.innerHTML = i18nTranslations[lang][key];
-        }
+document.querySelectorAll('.lang-btn').forEach(button => {
+    button.addEventListener('click', (e) => {
+        const lang = e.target.textContent.trim().toLowerCase(); // Récupère "fr", "en" ou "de"
+        switchLanguage(lang);
+        
+        // Optionnel : Met à jour visuellement la classe active sur TOUS les boutons de cette langue
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            if(btn.textContent.trim().toLowerCase() === lang) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
     });
-
-    // Gestion visuelle de la classe active sur les boutons FR, EN, DE
-    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-    const activeBtn = document.querySelector(`.lang-btn[onclick="switchLanguage('${lang}')"]`);
-    if (activeBtn) activeBtn.classList.add('active');
-
+});
     // Mémorise le choix de langue
     localStorage.setItem('portfolio_lang', lang);
 }
