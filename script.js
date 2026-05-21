@@ -183,36 +183,38 @@ if (cursorDot && cursorOutline) {
 // SYSTEME DE TRADUCTION SANS ERREUR CORS (DONNÉES INTÉGRÉES)
 // ==========================================================================
 
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // ==========================================
+    // 🌐 GESTION DE LA TRADUCTION ET DES BOUTONS
+    // ==========================================
+    
+    // On cible TOUS les boutons qui ont la classe .lang-btn (desktop + mobile)
+    const langButtons = document.querySelectorAll('.lang-btn');
 
-// Fonction globale pour changer la langue dynamiquement
-function switchLanguage(lang) {
-    // i18nTranslations est automatiquement accessible car chargé depuis translations.js
-    if (!i18nTranslations || !i18nTranslations[lang]) return;
+    langButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault(); // Évite tout comportement anormal au clic
 
-    // Traduit chaque balise dotée de l'attribut data-i18n
-document.querySelectorAll('.lang-btn').forEach(button => {
-    button.addEventListener('click', (e) => {
-        const lang = e.target.textContent.trim().toLowerCase(); // Récupère "fr", "en" ou "de"
-        switchLanguage(lang);
-        
-        // Optionnel : Met à jour visuellement la classe active sur TOUS les boutons de cette langue
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            if(btn.textContent.trim().toLowerCase() === lang) {
-                btn.classList.add('active');
-            } else {
-                btn.classList.remove('active');
+            // 1. Récupère la langue cible en minuscules (ex: "fr", "en", "de")
+            const targetLang = e.target.textContent.trim().toLowerCase();
+            
+            // 2. Appelle ta fonction de traduction globale
+            if (typeof switchLanguage === "function") {
+                switchLanguage(targetLang);
             }
+
+            // 3. Synchronise l'état visuel "active" sur TOUS les blocs de boutons
+            langButtons.forEach(btn => {
+                const btnLang = btn.textContent.trim().toLowerCase();
+                if (btnLang === targetLang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
         });
     });
-});
-    // Mémorise le choix de langue
-    localStorage.setItem('portfolio_lang', lang);
-}
-
-// Initialisation au chargement de la page
-document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('portfolio_lang') || 'fr';
-    switchLanguage(savedLang);
 });
 
 document.addEventListener("DOMContentLoaded", () => {
