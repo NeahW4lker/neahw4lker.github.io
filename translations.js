@@ -44,7 +44,7 @@ const i18nTranslations = {
     "exp4_summary": "Administration des infrastructures systèmes et support technique de proximité.",
     "exp4_bullet1": "<i class='fa-solid fa-caret-right'></i> Support utilisateur de Niveau 1 (systèmes, réseaux et applications).",
     "exp4_bullet2": "<i class='fa-solid fa-caret-right'></i> Assistance active au déploiement et à l'installation physique de nouveaux serveurs.",
-    "projects_title": "Dépôts & Laboratoires SecOps",
+    "projects_title": "Projet self-made et OpenSource",
     "projects_subtitle": "Outils open-source et environnements de tests développés en JavaScript et Node.js.",
     "proj1_title": "Audit automatisé des serveurs linux",
     "proj1_desc": "Un Workflow utilisant des outils OpenSource et des modèles IA pour pouvoir audité et automatisé les serveurs linux que ce soit ponctuel ou reccurents.",
@@ -71,7 +71,13 @@ const i18nTranslations = {
     "cert4_desc": "Principes de gouvernance de la sécurité",
     "footer_rights": "Conçu de manière sécurisée et optimisé pour la production.",
     "footer_channel_title": "Pour me contacter directement :",
-    "footer_rights": "Conçu de manière sécurisée et optimisé pour la production."
+    "footer_rights": "Conçu de manière sécurisée et optimisé pour la production.",
+    "lang1_title":"Français",
+    "lang2_title":"Anglais",
+    "lang3_title":"Allemand",
+    "lang4_title":"Malagasy"
+
+
   },
   "en": {
     "hero_title": "Tsiry Haritiana RAKOTOARISOA",
@@ -117,8 +123,8 @@ const i18nTranslations = {
     "exp4_summary": "System infrastructure management, technical maintenance, and hardware deployment support.",
     "exp4_bullet1": "<i class='fa-solid fa-caret-right'></i> Provide Level 1 End User Support for operating systems, hardware, networks, and software applications.",
     "exp4_bullet2": "<i class='fa-solid fa-caret-right'></i> Actively assist with the physical installation, cabling, and provisioning of new infrastructure servers.",
-    "projects_title": "SecOps Repositories & Labs",
-    "projects_subtitle": "Open-source tools and test environments built using vanilla JavaScript and Node.js.",
+    "projects_title": "A self-made, open-source project",
+    "projects_subtitle": "Using open-source tools to automate time-consuming processes for businesses. Creating showcase websites in compliance with ISO 27001 standards. Drafting technical documentation as well as audit and penetration test reports.",
     "proj1_title": "Automated audit of Linux servers",
     "proj1_desc": "A workflow that uses open-source tools and AI models to audit and automate Linux servers, whether on an ad hoc or recurring basis.",
     "proj2_title": "Secure-by-Design Architecture",
@@ -144,7 +150,12 @@ const i18nTranslations = {
     "cert4_desc": "Security Governance Principles",
     "footer_rights": "Securely designed and optimized for production environments.",
     "footer_channel_title": "To contact me directly:",
-    "footer_rights": "Securely designed and optimized for production."
+    "footer_rights": "Securely designed and optimized for production.",
+    "lang1_title":"French",
+    "lang2_title":"English",
+    "lang3_title":"German",
+    "lang4_title":"Malagasy"
+
   },
   "de": {
     // Profil et Allemand basés sur tes objectifs pro
@@ -191,8 +202,8 @@ const i18nTranslations = {
     "exp4_summary": "Systeminfrastruktur-Management, technische Wartung und Serverinstallation.",
     "exp4_bullet1": "<i class='fa-solid fa-caret-right'></i> First-Level-Support für Endbenutzer (Betriebssysteme, Netzwerke und Anwendungen).",
     "exp4_bullet2": "<i class='fa-solid fa-caret-right'></i> Unterstützung bei der physischen Installation, Verkabelung und Bereitstellung neuer Server.",
-    "projects_title": "SecOps-Repositories & Labore",
-    "projects_subtitle": "Open-Source-Tools und Testumgebungen, entwickelt mit JavaScript und Node.js.",
+    "projects_title": "Eigenes und Open-Source-Projekt",
+    "projects_subtitle": "Einsatz von Open-Source-Tools zur Automatisierung zeitaufwändiger Prozesse in Unternehmen. Erstellung von Präsentationswebsites gemäß den Normen der ISO 27001. Erstellung technischer Dokumentationen sowie von Audit- und Penetrationstestberichten.",
     "proj1_title": "Automatisierte Überprüfung von Linux-Servern",
     "proj1_desc": "Ein Workflow, der Open-Source-Tools und KI-Modelle nutzt, um Linux-Server zu überprüfen und zu automatisieren – sei es punktuell oder regelmäßig.",
     "proj2_title": "Secure-by-Design Architecture",
@@ -218,6 +229,10 @@ const i18nTranslations = {
     "cert3_desc": "Sicherheitskontrollen & Gegenmaßnahmen",
     "cert4_desc": "Prinzipien der Security Governance",
     "footer_channel_title": "Um mich direkt zu kontaktieren:",
-    "footer_rights": "Sicher entwickelt und für Produktionsumgebungen optimiert."
+    "footer_rights": "Sicher entwickelt und für Produktionsumgebungen optimiert.",
+    "lang1_title":"Französich",
+    "lang2_title":"Englisch",
+    "lang3_title":"Deutsch",
+    "lang4_title":"Madagassich"
   }
 };
