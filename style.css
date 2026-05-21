@@ -1036,3 +1036,34 @@ nav ul li a:hover {
         background-color: #FFFFFF; /* Le point devient blanc au survol */
     }
 }
+.lang-switcher {
+    display: flex;
+    gap: 8px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000; /* Reste au-dessus du curseur personnalisé */
+}
+
+.lang-btn {
+    background-color: var(--secondary-dark);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #BDC3C7;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.lang-btn:hover {
+    color: #FFFFFF;
+    border-color: var(--accent);
+}
+
+.lang-btn.active {
+    background-color: var(--accent); /* Rouge au clic */
+    color: #FFFFFF;
+    border-color: var(--accent);
+    box-shadow: 0 0 10px rgba(231, 76, 60, 0.3);
+}
