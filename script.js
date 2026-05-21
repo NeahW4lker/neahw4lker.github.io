@@ -179,3 +179,37 @@ if (cursorDot && cursorOutline) {
         });
     });
 }
+// ==========================================================================
+// SYSTEME DE TRADUCTION SANS ERREUR CORS (DONNÉES INTÉGRÉES)
+// ==========================================================================
+
+
+// Fonction globale pour changer la langue dynamiquement
+function switchLanguage(lang) {
+    // i18nTranslations est automatiquement accessible car chargé depuis translations.js
+    if (!i18nTranslations || !i18nTranslations[lang]) return;
+
+    // Traduit chaque balise dotée de l'attribut data-i18n
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (i18nTranslations[lang][key]) {
+            element.innerHTML = i18nTranslations[lang][key];
+        }
+    });
+
+    // Gestion visuelle de la classe active sur les boutons FR, EN, DE
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    const activeBtn = document.querySelector(`.lang-btn[onclick="switchLanguage('${lang}')"]`);
+    if (activeBtn) activeBtn.classList.add('active');
+
+    // Mémorise le choix de langue
+    localStorage.setItem('portfolio_lang', lang);
+}
+
+// Initialisation au chargement de la page
+document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('portfolio_lang') || 'fr';
+    switchLanguage(savedLang);
+});
+
+// --- Reste de ton code (Animation du curseur personnalisé, particules, etc.) ---
